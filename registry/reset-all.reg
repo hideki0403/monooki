@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Bluetooth]
+"AllowAdvertising"=dword:00000000
+"AllowDiscoverableMode"=dword:00000000
+"AllowPromptedProximalConnections"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Connectivity]
+"AllowBluetooth"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\WiFi]
+"AllowInternetSharing"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\current\device\Settings]
+"PageVisibilityList"="hide:windowsupdate;windowsupdate-action;windowsupdate-options;windowsupdate-restartoptions;windowsupdate-history;windowsdefender;backup;troubleshoot;recovery;activation;findmydevice;developers;windowsinsider;delivery-optimization;signinoptions-launchfaceenrollment;signinoptions-launchfingerprintenrollment;gaming-gamebar;gaming-gamedvr;gaming-broadcasting;gaming-gamemode;gaming-trueplay;gaming-xboxnetworking;quietmomentsgame;"
