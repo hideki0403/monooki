@@ -7,13 +7,13 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット有効化セットアップ Ver1.0.0
+echo モバイルホットスポット有効化セットアップ Ver1.0.1
 echo.
 echo 1. ファイルのダウンロード
 timeout 3
 
 mkdir "%defaultDir%"
-bitsadmin /transfer download %filehost%run.vbs "%defaultDir%\HSChecker\run.vbs"
+bitsadmin /transfer download %filehost%run.vbs "%defaultDir%\run.vbs"
 
 echo 2. 自動実行タスクの作成
 
@@ -22,3 +22,4 @@ echo タスクの作成に成功しました。
 
 echo.
 echo セットアップが完了しました。
+pause
