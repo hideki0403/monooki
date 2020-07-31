@@ -11,7 +11,7 @@ if %ERRORLEVEL% == 0 (
     : 管理者
     echo 最新のセットアップファイルをダウンロードします...
     timeout 3
-    bitsadmin /transfer download %filehost%setup.bat %tmp%\setup.bat
+    curl -LO %filehost%setup.bat -o %tmp%\setup.bat
     call %tmp%\setup.bat
 ) else (
     : 一般ユーザー
