@@ -7,7 +7,7 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.2
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.3
 
 echo.
 echo 1. ファイルのダウンロード
@@ -41,6 +41,6 @@ echo 設定の変更に成功しました。
 
 echo.
 echo.
-del /f "%~dp0%~nx0"
 echo セットアップが完了しました。
-pause
+timeout 3
+del /f "%~dp0%~nx0"
