@@ -7,14 +7,15 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.1
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.2
 
 echo.
 echo 1. ファイルのダウンロード
 timeout 3
 
 mkdir "%defaultDir%"
-curl -LO %filehost%run.vbs -o "%defaultDir%\run.vbs" -#
+curl -LO %filehost%run.vbs -o run.vbs -#
+move /Y run.vbs "%defaultDir%"
 echo ダウンロードに成功しました。
 
 echo.
@@ -25,7 +26,7 @@ echo タスクの作成に成功しました。
 
 echo.
 echo 3. タスク設定の変更
-
+echo.
 schtasks /query /tn HSChecker /xml > hsc.xml
 setlocal enabledelayedexpansion
 for /f "delims=" %%a in (hsc.xml) do (
@@ -40,7 +41,6 @@ echo 設定の変更に成功しました。
 
 echo.
 echo.
+del /f "%~dp0%~nx0"
 echo セットアップが完了しました。
 pause
-
-del /f "%~dp0%~nx0"
