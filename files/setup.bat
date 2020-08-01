@@ -7,14 +7,14 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット有効化セットアップ Ver1.1.1
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.0
 
 echo.
 echo 1. ファイルのダウンロード
 timeout 3
 
 mkdir "%defaultDir%"
-curl -LO %filehost%run.vbs -o "%defaultDir%\run.vbs"
+curl -LO %filehost%run.vbs -o "%defaultDir%\run.vbs" -#
 echo ダウンロードに成功しました。
 
 echo.
@@ -38,6 +38,7 @@ del temp.xml
 del hsc.xml
 echo 設定の変更に成功しました。
 
+echo.
 echo.
 echo セットアップが完了しました。
 pause
