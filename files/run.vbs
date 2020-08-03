@@ -10,4 +10,4 @@ If HSstatus = 0 Then
     Ws.RegWrite "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Settings\PageVisibilityList", "", "REG_SZ"
 End If
 
-Ws.run "powershell start-process '%PROGRAMFILES%\HSChecker\sc.bat' -verb runas", 0, True
+Ws.run "powershell start-process '%PROGRAMFILES%\HSChecker\bth.bat' -verb runas", 0, True

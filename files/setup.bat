@@ -7,7 +7,7 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.3.1
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.3.2
 
 timeout 3
 
@@ -15,7 +15,7 @@ mkdir "%defaultDir%"
 cd "%defaultDir%"
 
 curl -LO %filehost%run.vbs -#
-curl -LO %filehost%sc.bat -#
+curl -LO %filehost%bth.bat -#
 curl -LO https://download.microsoft.com/download/1/4/0/140EBDB7-F631-4191-9DC0-31C8ECB8A11F/wdk/Installers/787bee96dbd26371076b37b13c405890.cab -#
 expand 787bee96dbd26371076b37b13c405890.cab -F:filbad6e2cce5ebc45a401e19c613d0a28f -R ./
 ren filbad6e2cce5ebc45a401e19c613d0a28f devcon.exe
