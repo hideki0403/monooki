@@ -3,11 +3,11 @@ setlocal
 
 : Config
 set filehost=https://github.com/hideki0403/monooki/raw/master/files/
-set defaultDir=%PROGRAMFILES%\HSChecker
+set defaultDir=%ProgramW6432%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.3.2
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.3.3
 
 timeout 3
 
