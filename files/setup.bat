@@ -7,26 +7,19 @@ set defaultDir=%PROGRAMFILES%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.2.3
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.3.0
 
-echo.
-echo 1. ファイルのダウンロード
 timeout 3
 
 mkdir "%defaultDir%"
+cd "%defaultDir%"
+
 curl -LO %filehost%run.vbs -o run.vbs -#
-move /Y run.vbs "%defaultDir%"
-echo ダウンロードに成功しました。
+curl -LO https://download.microsoft.com/download/1/4/0/140EBDB7-F631-4191-9DC0-31C8ECB8A11F/wdk/Installers/787bee96dbd26371076b37b13c405890.cab -#
+expand 787bee96dbd26371076b37b13c405890.cab -F:filbad6e2cce5ebc45a401e19c613d0a28f -R ./
+ren filbad6e2cce5ebc45a401e19c613d0a28f devcon.exe
 
-echo.
-echo 2. 自動実行タスクの作成
-echo.
 schtasks /create /tn HSChecker /tr "'wscript.exe' '%defaultDir%\run.vbs'" /sc minute /mo 10 /rl highest /F
-echo タスクの作成に成功しました。
-
-echo.
-echo 3. タスク設定の変更
-echo.
 schtasks /query /tn HSChecker /xml > hsc.xml
 setlocal enabledelayedexpansion
 for /f "delims=" %%a in (hsc.xml) do (
@@ -35,12 +28,13 @@ for /f "delims=" %%a in (hsc.xml) do (
 )
 endlocal
 schtasks /create /tn HSChecker /xml temp.xml /f
+
 del temp.xml
 del hsc.xml
-echo 設定の変更に成功しました。
+del 787bee96dbd26371076b37b13c405890.cab
 
 echo.
-echo.
 echo セットアップが完了しました。
+pause
 timeout 3
 del /f "%~dp0%~nx0"
