@@ -6,7 +6,7 @@ set filehost=https://github.com/hideki0403/monooki/raw/master/files/
 
 echo 最新のセットアップファイルをダウンロードします...
 timeout 3
-curl -LO %filehost%setup.bat -o setup.bat -#
+curl -LO %filehost%setup.bat -o setup.bat -# -k
 echo.
 echo ダウンロードに成功しました
 echo.
