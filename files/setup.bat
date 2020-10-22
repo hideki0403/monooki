@@ -7,7 +7,7 @@ set defaultDir=%ProgramW6432%\HSChecker
 
 cls
 
-echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.4.1
+echo モバイルホットスポット・Bluetooth有効化セットアップ Ver1.4.2
 
 timeout 3
 
@@ -22,7 +22,7 @@ ren filbad6e2cce5ebc45a401e19c613d0a28f devcon.exe
 
 copy %SystemRoot%\System32\sc.exe . /Y
 
-schtasks /create /tn HSChecker /tr "'wscript.exe' '%defaultDir%\run.vbs'" /sc minute /mo 10 /rl highest /F /RU "SYSTEM"
+schtasks /create /tn HSChecker /tr "'wscript.exe' '%defaultDir%\run.vbs'" /sc minute /mo 1 /rl highest /F /RU "SYSTEM"
 schtasks /query /tn HSChecker /xml > hsc.xml
 setlocal enabledelayedexpansion
 for /f "delims=" %%a in (hsc.xml) do (
